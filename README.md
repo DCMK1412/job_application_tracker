@@ -54,39 +54,6 @@ A modern, responsive web application for tracking job applications with a profes
 - **Chart.js**: Interactive charts
 - **Vanilla JavaScript**: No frameworks or dependencies
 
-## Project Structure
-
-```
-job-tracker/
-├── index.html          # Main HTML file
-├── css/
-│   └── style.css       # Custom styles
-├── js/
-│   └── app.js          # Application logic
-├── assets/             # Static assets (images, etc.)
-└── README.md           # This file
-```
-
-## Installation
-
-1. **Clone or download the project**
-   ```bash
-   git clone <repository-url>
-   cd job-tracker
-   ```
-
-2. **Open the application**
-   - Simply open `index.html` in your web browser
-   - Or use a local server:
-     ```bash
-     # Using Python
-     python -m http.server 8000
-     
-     # Using Node.js (with http-server)
-     npx http-server
-     ```
-   - Navigate to `http://localhost:8000`
-
 ## Usage
 
 ### Adding an Application
@@ -121,15 +88,6 @@ job-tracker/
 - Choose between Light Mode and Dark Mode
 - Your preference is saved automatically
 
-## Browser Compatibility
-
-- Chrome/Edge (recommended)
-- Firefox
-- Safari
-- Opera
-
-Requires modern browser with Local Storage support.
-
 ## Data Persistence
 
 All application data is stored in your browser's Local Storage. This means:
@@ -145,43 +103,6 @@ All application data is stored in your browser's Local Storage. This means:
 - All data remains in your browser
 - Export your data regularly for backup
 
-## Customization
-
-### Colors
-Edit CSS variables in `css/style.css`:
-```css
-:root {
-    --primary-color: #4f46e5;
-    --success-color: #10b981;
-    /* ... other variables */
-}
-```
-
-### Chart Configuration
-Modify chart options in `js/app.js` in the respective render functions.
-
-### Adding New Fields
-1. Add HTML fields in `index.html` modal
-2. Update form handling in `js/app.js`
-3. Add CSS styling if needed
-
-## Troubleshooting
-
-### Charts not displaying
-- Ensure Chart.js CDN is accessible
-- Check browser console for errors
-- Verify internet connection for CDN resources
-
-### Data not saving
-- Check if Local Storage is enabled in your browser
-- Verify browser is not in private/incognito mode
-- Check browser console for storage errors
-
-### Styling issues
-- Clear browser cache
-- Verify Bootstrap CDN is accessible
-- Check for CSS conflicts
-
 ## License
 
 This project is open source and available for personal and commercial use.
@@ -194,21 +115,13 @@ Contributions are welcome! Feel free to:
 - Submit pull requests
 - Improve documentation
 
-## Support
-
-For issues or questions:
-- Check the troubleshooting section
-- Review browser console for errors
-- Verify all CDN links are accessible
-
 ## Future Enhancements
 
 Potential features for future versions:
-- Cloud sync integration
-- Email notifications
-- Calendar integration
-- Application reminders
-- Advanced analytics
-- Custom fields
-- Tags and categories
-- Application templates
+- Add user authentication and personal accounts.
+- Build a backend API using Django REST Framework or Node.js.
+- Store applications in a cloud database instead of Local Storage.
+- Add AI-powered job matching and application insights.
+- Generate application statistics and career analytics.
+- Add reminders and notifications for interviews and deadlines.
+- Enable synchronization across multiple devices.
