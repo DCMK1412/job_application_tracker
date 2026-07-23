@@ -180,6 +180,31 @@ const UIManager = {
      * Initialize event listeners
      */
     initializeEventListeners() {
+        // Mobile sidebar toggle
+        const sidebarToggle = document.getElementById('sidebar-toggle');
+        const sidebarOverlay = document.getElementById('sidebar-overlay');
+        
+        if (sidebarToggle) {
+            sidebarToggle.addEventListener('click', () => {
+                this.toggleSidebar();
+            });
+        }
+        
+        if (sidebarOverlay) {
+            sidebarOverlay.addEventListener('click', () => {
+                this.toggleSidebar();
+            });
+        }
+        
+        // Close sidebar when clicking nav links on mobile
+        document.querySelectorAll('.sidebar-nav .nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 991) {
+                    this.toggleSidebar();
+                }
+            });
+        });
+        
         // Navigation
         document.getElementById('nav-dashboard').addEventListener('click', (e) => {
             e.preventDefault();
@@ -889,6 +914,24 @@ const UIManager = {
         } else {
             icon.className = 'bi bi-moon-fill';
             text.textContent = 'Dark Mode';
+        }
+    },
+    
+    /**
+     * Toggle sidebar on mobile
+     */
+    toggleSidebar() {
+        const sidebar = document.getElementById('sidebar');
+        const overlay = document.getElementById('sidebar-overlay');
+        
+        sidebar.classList.toggle('show');
+        overlay.classList.toggle('show');
+        
+        // Prevent body scroll when sidebar is open
+        if (sidebar.classList.contains('show')) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = '';
         }
     },
     
